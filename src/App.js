@@ -8,7 +8,19 @@ class App extends Component {
     console.log(`Logging in ${username} with password ${password}`);
   };
 
+  state = {
+    message: ''
+  }
+
+  handleMessage = (msg) => {
+    // console.log(msg)
+    this.setState({
+      message: msg
+    })
+  }
+
   render() {
+    console.log(this.state.message)
     return (
       <div>
 
@@ -20,8 +32,8 @@ class App extends Component {
         <h1>
           <pre>TwitterMessage</pre>
         </h1>
-        <TwitterMessage maxChars={280} />
-
+        <TwitterMessage handleMessage={this.handleMessage} maxChars={280} />
+        
 
 
       </div>
